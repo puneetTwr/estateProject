@@ -42,7 +42,7 @@ export const SignIn = async (req, res, next) => {
         secure: true,
       })
       .status(200)
-      .json({ message: "Signed in successfully", userWithoutPassword });
+      .json({ ...userWithoutPassword });
   } catch (error) {
     next(errorHandler(400, error.message));
   }
